@@ -1,0 +1,50 @@
+---
+- type: ImportStructureAndStaticProperty
+  batch: 10
+- type: ImportTemporalProperty
+  # If all is set to true, the startTime and endTime will be ignored.
+  all: true
+  # If all is set to false, you must specify legal startTime and endTime.
+  startTime: 2010-05-01T00:00:00+00:00
+  endTime: 2010-05-03T00:00:00+00:00
+  batch: 10
+# For simplicity, we only update temporal property.
+- type: UpdateProperty
+  property: "tp1"
+  time: 2021-12-20T00:15:00+00:00
+  value: "crusher"
+# For simplicity, we do not query static.
+- type: TimePointQuery
+  entityType: 0
+  entityId: 1
+  property: "tp1"
+  time: 2021-12-20T00:15:00+00:00
+  repeat: 100
+# Yes, we can have multiple same query types in a configuration.
+- type: TimePointQuery
+  entityType: 1
+  entityId: 2
+  property: "tp2"
+  time: 2021-12-20T00:15:00+00:00
+  repeat: 100
+# For simplicity, we aim to vertex.
+# This query the values of property for the vertex which multiple degrees neighbor the given vertex.
+- type: TimePointMultiDegreeQuery
+  entityId: 3
+  property: "tp3"
+  degree: 3
+  time: 2021-12-20T00:15:00+00:00
+  repeat: 100
+- type: TimeRangeMaxQuery
+  entityType: 1
+  entityId: 4
+  property: "tp4"
+  startTime: 2010-05-01T00:00:00+00:00
+  endTime: 2010-05-03T00:00:00+00:00
+  repeat: 100
+- type: VertexNeighboringEdgesMaxQuery
+  entityId: 3
+  property: "tp1"
+  time: 2010-05-01T00:00:00+00:00
+  repeat: 100
+
