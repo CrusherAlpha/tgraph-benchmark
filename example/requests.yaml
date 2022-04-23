@@ -1,5 +1,5 @@
 ---
-runDate: !!timestamp now
+runDate: "`r Sys.Date()`"
 description: "test write performance"
 requests:
   - txn: ImportStructureAndStaticProperty
