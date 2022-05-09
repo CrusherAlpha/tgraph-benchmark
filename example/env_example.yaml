@@ -19,6 +19,3 @@ schema:
     tp1: "INT"
     tp2: "DOUBLE"
 
-# model is in ["RELATION", "GRAPH", "TGRAPH"]
-model: "RELATION"
-

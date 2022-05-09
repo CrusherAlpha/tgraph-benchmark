@@ -23,4 +23,11 @@ public class Pair<K, V> {
         return new Pair<>(first, second);
     }
 
+    @Override
+    public String toString() {
+        return "Pair{" +
+                "first=" + first +
+                ", second=" + second +
+                '}';
+    }
 }

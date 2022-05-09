@@ -48,6 +48,7 @@ public class SystemInfo {
     }
 
     public static void systemInfo() {
+        System.out.println("--------------------------------------System Info Start--------------------------------------");
         var system = new oshi.SystemInfo();
         var hardware = system.getHardware();
         System.out.println("Checking computer system...");
@@ -62,6 +63,7 @@ public class SystemInfo {
         printOperatingSystem(system.getOperatingSystem());
         System.out.println("Checking JVM...");
         printJVM();
+        System.out.println("--------------------------------------System Info End--------------------------------------");
     }
 
     public static void main(String[] args) {
