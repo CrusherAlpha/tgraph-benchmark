@@ -8,10 +8,8 @@ In this project, we compare TGraph with [Neo4j](https://github.com/neo4j/neo4j) 
 
 
 ## Basic Idea
-We process a request in a transaction, thus request and transaction is one-to-one map.
-we evaluate system performance through latency, throughput and disk space occupation.
-latency: the max value of 90%, 95%, 99% transactions finish.
-throughput: the number of transactions finish per second.
+We process a request in a transaction, thus request and transaction is one-to-one mapping.
+we evaluate system performance through average latency(actually tail latency is needed, but the autor is too lazy), throughput and disk space occupancy.
 
 Transactions include write only and read only transactions.
 ### write only transaction
@@ -29,8 +27,12 @@ compare specific write and read performance
 
 ## Usage 
 You can configure the system through yaml file lie in src/resource. Once you finished
-the configuration, the system will automatically run you configuration and write the
-result into the directory you configured.
+the configuration, the system will run automatically and write the
+results into the directory you configured.
 
 ## Dataset
 [BJ-traffic](https://paperswithcode.com/dataset/taxibj), [EU-electricity](https://www.nature.com/articles/sdata2017175), [Generation](https://github.com/CrusherAlpha/temporal_graph_generator)
+
+
+## NOTE
+This project is in refactor... The initial benchmark project is removed.
